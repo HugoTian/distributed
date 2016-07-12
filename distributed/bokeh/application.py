@@ -30,7 +30,8 @@ class BokehWebInterface(object):
                   ip, socket.gethostbyname(ip),
                   socket.gethostname(),
                   socket.gethostbyname(socket.gethostname()),
-                  host] + list(map(str, bokeh_whitelist))]
+                  host]]
+        hosts.extend(list(map(str, bokeh_whitelist)))
 
         args = ([binname, 'serve'] + paths +
                 ['--log-level', 'warning',
